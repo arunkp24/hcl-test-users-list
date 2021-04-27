@@ -1,4 +1,4 @@
-<div class="users" *ngIf="!(error$ | async) else showEmptyTemplate">
+<div class="users" *ngIf="(error$ | async) === null else showEmptyTemplate">
     <div class="control-panel">
         <form [formGroup]="filterForm">
             <label class="select">Select column to filter:

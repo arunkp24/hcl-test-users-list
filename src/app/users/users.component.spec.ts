@@ -19,9 +19,9 @@ describe('UsersComponent', () => {
             declarations: [UsersComponent, FilterUserPipe],
             providers: [AppFacade],
             imports: [
-                HttpClientModule, 
-                ReactiveFormsModule, 
-                FormsModule, 
+                HttpClientModule,
+                ReactiveFormsModule,
+                FormsModule,
                 StoreModule.forRoot({ root: appReducer }),
                 EffectsModule.forRoot([AppEffects])
             ]

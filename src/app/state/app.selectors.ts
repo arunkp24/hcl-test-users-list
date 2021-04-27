@@ -1,8 +1,8 @@
-import { createFeatureSelector, createSelector } from "@ngrx/store";
-import { APP_STATE } from './app.interface';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { AppState } from './app.interface';
 
 // Get the root state
-const appState = createFeatureSelector<APP_STATE>('root');
+const appState = createFeatureSelector<AppState>('root');
 // Selector for getting the users
 export const getUsers = createSelector(appState, state => state.users);
 // Selector for getting the load state

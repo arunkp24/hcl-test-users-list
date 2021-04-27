@@ -28,20 +28,20 @@ describe('FilterUserPipe', () => {
         expect(pipe).toBeTruthy();
     });
     it('should filter users', () => {
-        const searchKey: string = 'a';
-        const searchColumn: string = 'name';
+        const searchKey = 'a';
+        const searchColumn = 'name';
         const result = pipe.transform(users, searchKey, searchColumn);
         expect(result).toEqual(users.splice(0, 1));
     });
     it('should not filter users', () => {
-        const searchKey: string = '';
-        const searchColumn: string = 'name';
+        const searchKey = '';
+        const searchColumn = 'name';
         const result = pipe.transform(users, searchKey, searchColumn);
         expect(result).toEqual(users);
     });
     it('should return empty array', () => {
-        const searchKey: string = 'x';
-        const searchColumn: string = 'name';
+        const searchKey = 'x';
+        const searchColumn = 'name';
         const result = pipe.transform(users, searchKey, searchColumn);
         expect(result).toEqual([]);
     });

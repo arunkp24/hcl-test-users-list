@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { APP_STATE } from './app.interface';
+import { AppState } from './app.interface';
 import * as query from './app.selectors';
 import * as AppActions from './app.actions';
 
@@ -8,7 +8,7 @@ import * as AppActions from './app.actions';
 @Injectable()
 export class AppFacade {
 
-    constructor(private store: Store<APP_STATE>) { }
+    constructor(private store: Store<AppState>) { }
     // Get the list of users from store
     users$ = this.store.select(query.getUsers);
     // Get the loading state

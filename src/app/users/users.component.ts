@@ -42,7 +42,7 @@ export class UsersComponent implements OnInit {
     users$: Observable<User[]> = this.facade.users$;
     // Facade for getting the error state
     error$: Observable<Error> = this.facade.error$;
-    // Reactive form 
+    // Reactive form
     filterForm: FormGroup;
     // Observable for the reactive form
     filterForm$: Observable<FormGroup>;

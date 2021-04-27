@@ -1,15 +1,15 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import * as UserListActions from './app.actions';
-import { APP_STATE } from './app.interface';
+import { AppState } from './app.interface';
 
 // Initial state of the application
-const INITIAL_STATE: APP_STATE = {
+const INITIAL_STATE: AppState = {
     users: [],
     loading: false,
     error: null
-}
+};
 
-export function appReducer(state: APP_STATE | undefined, action: Action) {
+export function appReducer(state: AppState | undefined, action: Action) {
     return reducer(state, action);
 }
 

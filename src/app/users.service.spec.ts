@@ -45,13 +45,13 @@ describe('UsersService', () => {
             }
         ];
 
-        service.getUsers().subscribe(users => {
-            expect(users.length).toBe(2);
-            expect(users).toEqual(users);
+        service.getUsers().subscribe(userList => {
+            expect(userList.length).toBe(2);
+            expect(userList).toEqual(users);
         });
 
         const mockReq = httpMock.expectOne(environment.api.get_users);
-        expect(mockReq.request.method).toBe("GET");
+        expect(mockReq.request.method).toBe('GET');
         mockReq.flush(users);
     });
 });
