@@ -2,12 +2,12 @@
     <div class="control-panel">
         <form [formGroup]="filterForm">
             <label class="select">Select column to filter:
-                <select formControlName="searchColumn">
+                <select data-testid="columnSelectBox" formControlName="searchColumn">
                     <option *ngFor="let opt of options" [ngValue]="opt.value">{{ opt.text }}</option>
                 </select>
             </label>
             <label class="input">Enter filter keywords:
-                <input formControlName="searchKey" type="text" placeholder="filter keywords go here..." />
+                <input data-testid="searchInput" formControlName="searchKey" type="text" placeholder="filter keywords go here..." />
             </label>
         </form>
     </div>
@@ -23,7 +23,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr
+                <tr data-testid="userRow"
                     *ngFor="let user of users$ | async | filterUser: (filterForm$ | async)?.searchKey : (filterForm$ | async)?.searchColumn">
                     <td>{{ user.name }}</td>
                     <td>{{ user.username }}</td>
@@ -36,5 +36,5 @@
     </div>
 </div>
 <ng-template #showEmptyTemplate>
-    <div>Oops. Error occurred while fetching users. Please try again later!</div>
+    <div data-testid="errorMessage">Oops. Error occurred while fetching users. Please try again later!</div>
 </ng-template>
